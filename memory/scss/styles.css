@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  margin: 20px auto;
+  place-items: center;
+}
+
+.images {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(3, 200px);
+}
+.images .image {
+  position: relative;
+}
+.images .image .back {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom left, red, blue 10%);
+  transition: all 0.5s linear;
+  backface-visibility: hidden;
+}
+.images .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s linear;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.images .image.selected img {
+  transform: rotateY(0);
+}
+.images .image.selected .back {
+  transform: rotateY(180deg);
+}/*# sourceMappingURL=styles.css.map */
